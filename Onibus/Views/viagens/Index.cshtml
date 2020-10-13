@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Onibus.Models.viagem>
+
+@{
+    ViewBag.Title = "Viagens";
+}
+
+<h2>Viagens</h2>
+
+<p>
+    @Html.ActionLink("Adicionar Nova Viagem", "Create")
+</p>
+
+<p>
+    Pesquisa por Data
+    @using(Html.BeginForm("Index", "viagens",FormMethod.Get))
+    {
+        @Html.TextBox("Pesquisa")
+        <input type="submit" value="Pesquisar" />
+    }
+</p>
+
+<p>
+    Pesquisa Motoristas por Rotas
+    @using (Html.BeginForm("Index", "viagens", FormMethod.Get))
+    {
+        @Html.TextBox("Pesquisa")
+        <input type="submit" value="Filtrar" />
+    }
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VeiculoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrabalhadorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RotasId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HorarioViagem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Custo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PosicaoVeiculo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataViagem)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Veiculos.Modelo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Trabalhador.Nome)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Rotas.NomeRota)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HorarioViagem)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Custo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PosicaoVeiculo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DataViagem)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.Codigo }) |
+        @Html.ActionLink("Detalhes", "Details", new { id = item.Codigo }) |
+        @Html.ActionLink("Excluir", "Delete", new { id = item.Codigo })
+    </td>
+</tr>
+}
+
+</table>

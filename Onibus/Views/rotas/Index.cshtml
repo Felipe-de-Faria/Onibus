@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Onibus.Models.rota>
+
+@{
+    ViewBag.Title = "Rotas";
+}
+
+<h2>Rotas</h2>
+
+<p>
+    @Html.ActionLink("Adicionar Nova rota", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeRota)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeRota)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.RotasId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.RotasId }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.RotasId })
+        </td>
+    </tr>
+}
+
+</table>

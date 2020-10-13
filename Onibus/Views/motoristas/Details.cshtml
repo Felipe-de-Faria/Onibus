@@ -1,0 +1,41 @@
+﻿@model Onibus.Models.motorista
+
+@{
+    ViewBag.Title = "Detalhes do Veículo";
+}
+
+<h2>Detalhes do Veículo</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItensAdd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItensAdd)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.VeiculoID }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

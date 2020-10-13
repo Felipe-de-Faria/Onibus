@@ -1,0 +1,73 @@
+﻿@model Onibus.Models.viagem
+
+@{
+    ViewBag.Title = "Detalhes da Viagem";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VeiculoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VeiculoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrabalhadorId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrabalhadorId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RotasId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RotasId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioViagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorarioViagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Custo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Custo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PosicaoVeiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PosicaoVeiculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataViagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataViagem)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Codigo }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

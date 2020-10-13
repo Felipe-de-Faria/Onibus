@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Onibus.Models.motorista>
+
+@{
+    ViewBag.Title = "Veiculos";
+}
+
+<h2>Veiculos</h2>
+
+<p>
+    @Html.ActionLink("Adicionar novo veiculo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItensAdd)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItensAdd)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.VeiculoID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.VeiculoID }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.VeiculoID })
+        </td>
+    </tr>
+}
+
+</table>

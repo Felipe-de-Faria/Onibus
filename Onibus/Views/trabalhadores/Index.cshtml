@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Onibus.Models.trabalhador>
+
+@{
+    ViewBag.Title = "Motoristas";
+}
+
+<h2>Motoristas</h2>
+
+<p>
+    @Html.ActionLink("Adicionar novo motorista", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.TrabalhadorId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.TrabalhadorId }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.TrabalhadorId })
+        </td>
+    </tr>
+}
+
+</table>

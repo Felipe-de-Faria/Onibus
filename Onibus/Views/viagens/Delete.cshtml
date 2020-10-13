@@ -1,0 +1,78 @@
+﻿@model Onibus.Models.viagem
+
+@{
+    ViewBag.Title = "Excluir Viagem";
+}
+
+<h2>Excluir</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VeiculoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VeiculoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrabalhadorId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrabalhadorId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RotasId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RotasId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioViagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorarioViagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Custo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Custo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PosicaoVeiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PosicaoVeiculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataViagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataViagem)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

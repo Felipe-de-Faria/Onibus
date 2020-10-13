@@ -1,0 +1,25 @@
+﻿@model Onibus.Models.rota
+
+@{
+    ViewBag.Title = "Detalhes da Rota";
+}
+
+<h2>Detalhes da Rota</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeRota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeRota)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.RotasId }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>
